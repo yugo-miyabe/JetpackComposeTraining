@@ -49,10 +49,14 @@ class MainActivity : ComponentActivity() {
             Column {
                 Text(
                     text = msg.author,
-                    color = MaterialTheme.colors.secondaryVariant
+                    color = MaterialTheme.colors.secondaryVariant,
+                    style = MaterialTheme.typography.subtitle2
                 )
                 Spacer(modifier = Modifier.height(4.dp))
-                Text(text = msg.body)
+                Text(
+                    text = msg.body,
+                    style = MaterialTheme.typography.subtitle2
+                )
             }
         }
     }
