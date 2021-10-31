@@ -47,7 +47,10 @@ class MainActivity : ComponentActivity() {
             Spacer(modifier = Modifier.width(8.dp))
 
             Column {
-                Text(text = msg.author)
+                Text(
+                    text = msg.author,
+                    color = MaterialTheme.colors.secondaryVariant
+                )
                 Spacer(modifier = Modifier.height(4.dp))
                 Text(text = msg.body)
             }
