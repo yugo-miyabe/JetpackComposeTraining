@@ -5,6 +5,7 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.border
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.padding
@@ -31,31 +32,21 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContent {
             LayoutsCodelabTheme {
-                // A surface container using the 'background' color from the theme
-                Surface(color = MaterialTheme.colors.background) {
-                    Greeting("Android")
-                }
+                PhotographerCard()
             }
         }
     }
 }
 
 @Composable
-fun Greeting(name: String) {
-    Text(text = "Hello $name!")
-}
-
-@Preview(showBackground = true)
-@Composable
-fun DefaultPreview() {
-    LayoutsCodelabTheme {
-        Greeting("Android")
-    }
-}
-
-@Composable
-fun PhotographerCard() {
-    Row {
+fun PhotographerCard(modifier: Modifier = Modifier) {
+    Row(
+        modifier
+            .padding(16.dp)
+            .clickable(onClick = {
+                /* Ignoring onClick */
+            })
+    ) {
         Surface(
             modifier = Modifier.size(50.dp),
             shape = CircleShape,
